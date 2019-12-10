@@ -21,11 +21,16 @@ class TestEmployee(unittest.TestCase):
         # 断言
         AssertCommon(self,r)
     # 更新
-    def test02_put(self):
-        pass
+    def test02_put(self,username='bj17012'):
+        r = self.api.api_put_employee(username)
+        print('更新员工名称结果为:',r.json())
+        AssertCommon(self,r)
     # 查询
     def test03_get(self):
-        pass
+        r = self.api.api_get_employee()
+        print("查询员工名称结果为：", r.json())
+        # 断言
+        AssertCommon(self, r)
     # 删除
     def test04_delete(self):
         # 调用删除接口
